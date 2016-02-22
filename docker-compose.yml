@@ -1,12 +1,22 @@
 ---
 version: '2'
 services:
-  db:
+  influxdb:
     build:
-      context: ./db
+      context: ./influxdb
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
     ports:
       - "8083:8083"
       - "8086:8086"
+  grafana:
+    build:
+      context: ./grafana
     ulimits:
-      soft: 65536
-      hard: 65536
+      nofile:
+        soft: 10000
+        hard: 10000
+    ports:
+      - "3000:3000"
