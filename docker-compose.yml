@@ -4,3 +4,6 @@ services:
   db:
     build:
       context: ./db
+    ports:
+      - "8083:8083"
+      - "8086:8086"
