@@ -20,3 +20,6 @@ services:
         hard: 10000
     ports:
       - "3000:3000"
+  telegraf:
+    build:
+      context: ./telegraf
