@@ -16,3 +16,12 @@ dc up -d
 docker exec -it influxdbdocker_influxdb_1 /bin/bash
 influx -import -path /root/NOAA_data.txt -precision s
 ```
+
+
+## kapacitor memo
+
+```
+kapacitor define -name cpu_alert -type stream -tick /etc/kapacitor/cpu_alert.tick -dbrp telegraf.default
+kapacitor enable cpu_alert
+kapacitor record stream -name cpu_alert -duration 20s
+```
