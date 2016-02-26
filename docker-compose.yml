@@ -26,6 +26,8 @@ services:
   kapacitor:
     build:
       context: ./kapacitor
+    ports:
+      - "9092:9092"
     ulimits:
       nofile:
         soft: 65536
