@@ -1,6 +1,15 @@
 ---
 version: '2'
 services:
+  nginx:
+    build:
+      context: ./nginx
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+    ports:
+      - "80:80"
   influxdb:
     build:
       context: ./influxdb
