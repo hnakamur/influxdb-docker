@@ -4,4 +4,6 @@ RUN yum install -y https://grafanarel.s3.amazonaws.com/builds/grafana-2.6.0-1.x8
 
 RUN systemctl enable grafana-server.service
 
+ENV TERM xterm
+
 CMD ["/usr/sbin/init"]

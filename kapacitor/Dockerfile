@@ -9,4 +9,6 @@ ADD cpu_alert.tick /etc/kapacitor/
 RUN cp /usr/lib/kapacitor/scripts/kapacitor.service /usr/lib/systemd/system/ \
  && systemctl enable kapacitor.service
 
+ENV TERM xterm
+
 CMD ["/usr/sbin/init"]

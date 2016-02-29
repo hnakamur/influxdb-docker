@@ -8,4 +8,6 @@ ADD telegraf.conf /etc/telegraf/
 RUN cp /usr/lib/telegraf/scripts/telegraf.service /usr/lib/systemd/system/ \
  && systemctl enable telegraf
 
+ENV TERM xterm
+
 CMD ["/usr/sbin/init"]

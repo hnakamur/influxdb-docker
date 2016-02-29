@@ -11,6 +11,8 @@ RUN curl -s -o /root/NOAA_data.txt https://s3-us-west-1.amazonaws.com/noaa.water
 RUN cp /usr/lib/influxdb/scripts/influxdb.service /usr/lib/systemd/system/ \
  && systemctl enable influxdb.service
 
+ENV TERM xterm
+
 # NOTE: In general, we'd better runa influxdb process directly.
 # However I would like to run systemd because I prefer the similar
 # settigns as the production environment where I do not use docker.
